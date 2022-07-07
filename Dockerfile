@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends gnupg net-tools openssh-server openjdk-8-jdk nano curl \
-    wget libmysqlclient-dev libssl-dev libkrb5-dev unzip gcc xz-utils
+    wget libmysqlclient-dev libssl-dev libkrb5-dev unzip gcc xz-utils software-properties-common
 
 RUN add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update
