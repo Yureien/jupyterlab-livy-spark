@@ -8,6 +8,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update
 RUN apt-get install -y --no-install-recommends python3.7 python3.7-distutils python3.7-dev
 RUN ln -s /usr/bin/python3.7 /usr/bin/python && \
+    rm /usr/bin/python3 && \
     ln -s /usr/bin/python3.7 /usr/bin/python3
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     python get-pip.py && \
