@@ -4,8 +4,7 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends gnupg net-tools openssh-server openjdk-8-jdk nano curl \
     wget libmysqlclient-dev libssl-dev libkrb5-dev unzip gcc xz-utils
 
-RUN echo "deb http://ppa.launchpad.net/deadsnakes/ppa/ubuntu focal main" >> /etc/apt/sources.list && \
-    apt-key adv --keyserver keyserver.ubuntu.com/ --recv-keys BA6932366A755776 && \
+RUN add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update
 RUN apt-get install -y --no-install-recommends python3.7 python3.7-distutils python3.7-dev
 RUN ln -s /usr/bin/python3.7 /usr/bin/python && \
